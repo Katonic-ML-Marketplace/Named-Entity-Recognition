@@ -4,8 +4,6 @@ RUN mkdir -p templates
 
 COPY app.py .
 COPY templates/index.html templates/.
-COPY templates/preview.html templates/.
-COPY templates/previewer.html templates/.
 COPY templates/result.html templates/.
 COPY requirements.txt .
 
