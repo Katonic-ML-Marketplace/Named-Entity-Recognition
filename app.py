@@ -28,19 +28,5 @@ def extract():
 
 	return render_template('result.html', rawtext=raw_text, result=result)
 
-
-@app.route('/previewer')
-def previewer():
-	return render_template('previewer.html')
-
-@app.route('/preview', methods=["GET", "POST"])
-def preview():
-	if request.method == 'POST':
-		newtext = request.form['newtext']
-		result = newtext
-
-	return render_template('preview.html', newtext=newtext, result=result)
-
-
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=8050, debug=False)
