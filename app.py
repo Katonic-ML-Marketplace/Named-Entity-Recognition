@@ -13,7 +13,6 @@ Markdown(app)
 
 @app.route('/')
 def index():
-
 	return render_template('index.html')
 
 
@@ -25,7 +24,6 @@ def extract():
 		html = displacy.render(docx,style="ent")
 		html = html.replace("\n\n", "\n")
 		result = HTML_WRAPPER.format(html)
-
 	return render_template('result.html', rawtext=raw_text, result=result)
 
 if __name__ == '__main__':
