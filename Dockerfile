@@ -1,8 +1,9 @@
 FROM python:3.8.2-slim
 
-RUN mkdir -p templates
+RUN mkdir -p static templates
 
 COPY app.py .
+COPY static/logo.png static/.
 COPY templates/index.html templates/.
 COPY templates/result.html templates/.
 COPY requirements.txt .
