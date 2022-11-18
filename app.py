@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import spacy
+import os
 from spacy import displacy
 from flaskext.markdown import Markdown
 
@@ -24,7 +25,7 @@ def extract():
 		html = displacy.render(docx,style="ent")
 		html = html.replace("\n\n", "\n")
 		result = HTML_WRAPPER.format(html)
-	return render_template('result.html', rawtext=raw_text, result=result)
+	return render_template('result.html', rawtext=raw_text, result=result,home=os.getenv("ROUTE"))
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=8050, debug=False)
